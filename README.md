@@ -152,14 +152,7 @@ Además, el Entregable 3 proporciona advertencias de seguridad cuando:
 
 ## 🔍 Análisis de Seguridad
 
-El análisis de seguridad implementado en el Entregable 3 es crucial para el diseño de torres de caída reales. Las aceleraciones excesivas pueden ser peligrosas para los pasajeros, y una velocidad de impacto demasiado alta al final del recorrido podría causar daños estructurales o lesiones.
-
-## 📚 Referencias
-
-- Serway, R. A., & Jewett, J. W. (2018). Physics for Scientists and Engineers. Cengage Learning.
-- Griffiths, D. J. (2017). Introduction to Electrodynamics. Cambridge University Press.
-- MATLAB Documentation: [ode45](https://www.mathworks.com/help/matlab/ref/ode45.html)
-
+El análisis de seguridad implementado eal final tambien es crucial para el diseño de torres de caida reales. Las aceleraciones excesivas pueden ser peligrosas para los pasajeros, y una velocidad de impacto demasiado alta al final del recorrido podria causar daños estructurales o lesiones.
 ---
 
 <p align="center">
