@@ -136,7 +136,7 @@ La simulacion completa considera tres fases distintas:
 
 3. **Caida Libre Final**: Si la gondola sale de la zona conductora antes de llegar al suelo, continua en caida libre.
 
-## 📈 Resultados y Visualizaciones
+## Resultados y Visualizaciones
 
 Los scripts generan varias graficas que muestran:
 
@@ -144,7 +144,7 @@ Los scripts generan varias graficas que muestran:
 - Aceleracion vs. Tiempo
 - Velocidad y Aceleracion vs. Altura
 
-   + el Entregable 3 proporciona advertencias de seguridad cuando:
+el Entregable 3 proporciona advertencias de seguridad cuando:
      
 - La aceleración maxima excede un limite seguro ( por defecto, 3g )
 - La velocidad final al llegar al piso excede un valor seguro ( por defecto, 1.0 m/s )
