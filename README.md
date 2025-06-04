@@ -11,7 +11,7 @@ Este proyecto simula computacionalmente la desaceleracion por frenado magnetico 
 - Simulación completa del movimiento de la gondola en diferentes fases
 - Visualización de velocidad y aceleración en función del tiempo y altura
 - Analisis de seguridad con advertencias sobre aceleraciones y velocidades peligrosas
-- Implementación en MATLAB con unidades del Sistema Internacional (SI)
+- Implementación en MATLAB con unidades del Sistema Internacional ( SI )
 - Personalizacion de parámetros fisicos y geometricos de la torre
 
 ## Estructura del Proyecto
@@ -27,7 +27,7 @@ El proyecto esta organizado en tres entregables incrementales, cada uno iterando
 ### Requisitos Previos
 
 - MATLAB ( R2019b o mayor )
-- Paquete de Ecuaciones Diferenciales de MATLAB (para la función `ode45`)
+- Paquete de Ecuaciones Diferenciales de MATLAB ( para la función `ode45` )
 
 ### Ejecucion de los Scripts
 
@@ -77,7 +77,7 @@ max_accel_segura_g = 3;     % Máxima aceleración segura (en unidades de g)
 max_vel_final_segura = 1.0; % Máxima velocidad segura al llegar al piso (m/s)
 ```
 
-## 🧲 Explicación de la Física
+## Explicación de la Fisica
 
 ### Fuerzas Involucradas
 
@@ -97,7 +97,7 @@ En este sistema actuan principalmente dos fuerzas:
 
 ### Ecuacion Diferencial del Movimiento
 
-Aplicando la Segunda Ley de Newton (F = m·a), obtenemos:
+Aplicando la Segunda Ley de Newton ( F = m·a ), obtenemos:
 
 ```
 m * (dv/dt) = Fg - Fz
@@ -109,7 +109,7 @@ Esta ecuación diferencial describe como cambia la velocidad de la góndola con 
 
 ### Velocidad Terminal
 
-La velocidad terminal es la velocidad constante que alcanza la gondola cuando la fuerza de frenado magnetico (Fz) se iguala en magnitud a la fuerza gravitacional (Fg):
+La velocidad terminal es la velocidad constante que alcanza la gondola cuando la fuerza de frenado magnetico ( Fz ) se iguala en magnitud a la fuerza gravitacional ( Fg ):
 
 ```
 Fg = Fz
