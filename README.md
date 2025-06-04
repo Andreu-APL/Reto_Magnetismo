@@ -93,6 +93,8 @@ En este sistema actuan principalmente dos fuerzas:
    ```
    Donde `k` es una constante de proporcionalidad y `v` es la velocidad de la gondola.
 
+3. **Fuerza Magnetica**
+
 ### Ecuacion Diferencial del Movimiento
 
 Aplicando la Segunda Ley de Newton ( F = m·a ), obtenemos:
