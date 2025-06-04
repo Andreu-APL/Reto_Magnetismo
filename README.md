@@ -1,7 +1,5 @@
 # Simulacion de Frenado Magnetico en Torres de Caida
 
-![Banner](https://i.imgur.com/JQXvmZs.jpg)
-
 ## 🎢 Descripcion del Proyecto
 
 Este proyecto simula computacionalmente la desaceleracion por frenado magnetico (corrientes de Eddy) de una gondola en una torre de caida de un parque de diversiones. La simulacion permite visualizar y analizar el comportamiento de la velocidad y aceleracion de la gondola durante su descenso, considerando diferentes fases del movimiento asi como parametros de la torre.
