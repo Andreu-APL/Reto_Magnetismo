@@ -1,0 +1,86 @@
+function zm = trayectoria(Bz,z,mag,m,zo,dt,vz,gamma)
+    w=-m*9.81;
+    zm(1)=zo;
+    zmfree(1)=zo;
+    vz(1)=0.7;
+    vzfree(1)=0;
+    tt(1)=0;
+    cc =1;
+   while zm(cc) > -3
+        delta = 0.005;
+        Bz_forward = interp1(z, Bz, zm(cc) + delta, 'linear', 'extrap');
+        Bz_backward = interp1(z, Bz, zm(cc) - delta, 'linear', 'extrap');
+        dBz_dz = (Bz_forward - Bz_backward) / (2 * delta);
+    
+        Fm(cc) = -mag * dBz_dz;
+        Ff = -gamma * vz(cc);
+        F(cc) = Fm(cc) + w + Ff;
+        a = F(cc) / m;
+    
+        zm(cc+1) = zm(cc) + vz(cc)*dt + 0.5*a*dt^2;
+        vz(cc+1) = vz(cc) + a*dt;
+    
+        zmfree(cc+1) = zmfree(cc) + vzfree(cc)*dt + 0.5*(-9.81)*dt^2;
+        vzfree(cc+1) = vzfree(cc) + (-9.81)*dt;
+        z_axis=z;
+        [zm(cc+1),vz(cc+1)]=rk4_step(zm(cc), vz(cc), dt, @(z,v) a_func(z,v, Bz, z_axis, mag, gamma, m));
+
+        tt(cc+1) = tt(cc) + dt;
+        cc = cc + 1;
+    
+        if abs(vz(cc)) < 1e-3
+        break
+        end
+    end
+
+
+    figure(99)
+    hold on
+    plot(tt,zm, 'r-', 'LineWidth',2)
+    plot(tt,zmfree,'b--','LineWidth',2)
+
+    grid on 
+    xlabel('Time(s)')
+    ylabel('Z position (m)')
+    title(' Posicion vs tiempo en un Dipolo magnetico callendo a traves de una espira cargada ')
+    legend('Trayectoria con la espira cargada', 'Trayectoria de caida libre','Southwest')
+    axis([0 max(tt) -6 6])
+    
+
+    
+
+
+end
+%function a
+function a=a_func(z, v, Bz, z_axis, mag, gamma, m)
+    delta=0.005;
+    Bz_forward=interp1(z_axis,Bz, z + delta, 'linear','extrap');
+    Bz_backward=interp1(z_axis,Bz, z - delta, 'linear','extrap');
+    dbz_dz=(Bz_forward-Bz_backward)/(2*delta);
+  
+    Fm=-mag*dbz_dz;
+    Ff=-gamma*v; %fuerza de fricción
+    F=Fm+Ff- m*9.81;%fuerza total
+    a=F/m;%aceleración, esta es calculada por medio de la segunda Ley de Newton
+end
+
+function [z_next, v_next]=rk4_step(z,v,dt, a_total)
+    %k1
+    k1z=v;
+    k1v=a_total(z,v);
+
+    %k2
+    k2z=v +(dt/2)*k1v;
+    k2v=a_total(z+(dt/2)*k1z,v+(dt/2)*k1v);
+
+    %k3
+    k3z=v+(dt/2)*k2v;
+    k3v=a_total(z+(dt/2)*k2z,v+(dt/2)*k2v);
+
+    %k4
+    k4z=v+dt*k3v;
+    k4v=a_total(z+(dt*k3z),v+(dt*k3v));
+
+    z_next= z + (dt/6)*(k1z+2*k2z+2*k3z+k4z);
+    v_next= v + (dt/6)*(k1v+2*k2v+2*k3v+k4v);
+end
