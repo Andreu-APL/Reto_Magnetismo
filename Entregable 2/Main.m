@@ -203,3 +203,6 @@ function Trayectoria(Bz,z,mag,m,zo,dt,vz,gamma)
 end
 
 % Resúmen físico
+% Este código simula la interacción entre un dipolo magnético en caída vertical y el campo magnético generado por un conjunto de espiras circulares con corriente constante. 
+% Utiliza la ley de Biot–Savart para calcular el campo magnético vectorial generado por las espiras, discretizadas en segmentos de corriente. Luego, se simula el movimiento de un dipolo bajo la influencia de este campo, considerando la fuerza magnética F = ∇(m·B), el peso gravitacional y la fricción. 
+% Finalmente, se comparan la trayectoria real del dipolo con la trayectoria en caída libre, mostrando cómo el gradiente del campo Bz produce una fuerza magnética capaz de frenar, detener o incluso invertir el movimiento del dipolo.
